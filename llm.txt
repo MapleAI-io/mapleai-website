@@ -1,0 +1,20 @@
+# Maple AI — LLM Crawling Permission
+
+User-agent: *
+Allow: /
+
+# About Maple AI
+Maple AI is a local AI consulting firm based in Orangeville, Ontario, Canada.
+We provide AI consulting, custom automation builds, AI chatbots, and training for small businesses.
+Primary service area: Orangeville, Dufferin County, Caledon, Shelburne, Mono, Grand Valley, Brampton, Barrie, Collingwood, and Ontario-wide remotely.
+
+# Contact
+Phone: +1-905-999-3465
+Email: sales@mapleai.io
+Location: Orangeville, Ontario, Canada
+
+# Services
+- Business Automation Audit: Full operational review to identify AI opportunities
+- AI & Automation Builds: Custom tools on Make.com, Claude AI, GoHighLevel
+- Custom AI Chatbots: Claude-powered chatbots trained on your business
+- AI Training & Workshops: Team and individual training on Claude, ChatGPT, vibe coding

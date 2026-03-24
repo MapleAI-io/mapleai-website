@@ -1,0 +1,89 @@
+[[redirects]]
+  from = "/services"
+  to = "/services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/orangeville"
+  to = "/orangeville.html"
+  status = 200
+
+[[redirects]]
+  from = "/caledon"
+  to = "/caledon.html"
+  status = 200
+
+[[redirects]]
+  from = "/shelburne"
+  to = "/shelburne.html"
+  status = 200
+
+[[redirects]]
+  from = "/mono"
+  to = "/mono.html"
+  status = 200
+
+[[redirects]]
+  from = "/grand-valley"
+  to = "/grand-valley.html"
+  status = 200
+
+[[redirects]]
+  from = "/brampton"
+  to = "/brampton.html"
+  status = 200
+
+[[redirects]]
+  from = "/barrie"
+  to = "/barrie.html"
+  status = 200
+
+[[redirects]]
+  from = "/collingwood"
+  to = "/collingwood.html"
+  status = 200
+
+[[redirects]]
+  from = "/dufferin-county"
+  to = "/dufferin-county.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/how-it-works"
+  to = "/how-it-works.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/automation-audit"
+  to = "/services/automation-audit.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/ai-automation-builds"
+  to = "/services/ai-automation-builds.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/ai-chatbots"
+  to = "/services/ai-chatbots.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/ai-training-workshops"
+  to = "/services/ai-training-workshops.html"
+  status = 200
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
