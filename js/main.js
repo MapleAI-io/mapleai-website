@@ -61,25 +61,3 @@ const observer = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => observer.observe(el));
 
-// ── Contact form (mailto fallback) ──
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    const name    = form.querySelector('[name="name"]').value;
-    const email   = form.querySelector('[name="email"]').value;
-    const phone   = form.querySelector('[name="phone"]').value;
-    const btype   = form.querySelector('[name="business_type"]').value;
-    const message = form.querySelector('[name="message"]').value;
-
-    // If Netlify forms are active, let them handle it
-    if (form.getAttribute('data-netlify') === 'true') return;
-
-    // Fallback: open mailto
-    e.preventDefault();
-    const subject = encodeURIComponent(`Maple AI Inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nBusiness Type: ${btype}\n\n${message}`
-    );
-    window.location.href = `mailto:sales@mapleai.io?subject=${subject}&body=${body}`;
-  });
-}
