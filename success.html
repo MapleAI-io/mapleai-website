@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Received | Maple AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%231d6b3a' d='M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z'/></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .success-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 28px;
+      text-align: center;
+    }
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--accent-low);
+      border: 2px solid var(--accent-mid);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 32px;
+    }
+    .success-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--accent);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .success-label {
+      font-family: var(--font-b);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .success-wrap h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .success-wrap h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .success-wrap p {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 480px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .success-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .success-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 99px;
+      margin: 0 auto 28px;
+      opacity: 0.35;
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#1d6b3a"/>
+        </svg>
+        Maple AI
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="success-wrap">
+  <div class="success-icon">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <div class="success-label">Message received</div>
+  <h1>We'll be in touch <em>shortly.</em></h1>
+  <div class="success-divider"></div>
+  <p>Thanks for reaching out. We typically respond within one business day. In the meantime, feel free to explore what we do.</p>
+  <div class="success-actions">
+    <a href="/" class="btn btn-primary">
+      Back to home
+      <svg viewBox="0 0 16 16" fill="none" width="14" height="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+    <a href="services/index.html" class="btn btn-outline">See our services</a>
+  </div>
+</div>
+
+</body>
+</html>
