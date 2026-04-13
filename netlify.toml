@@ -83,6 +83,12 @@
   to = "/services/ai-training-workshops.html"
   status = 200
 
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
 [build]
   publish = "."
 
