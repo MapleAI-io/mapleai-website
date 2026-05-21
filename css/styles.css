@@ -138,6 +138,8 @@ ul { list-style: none; }
   letter-spacing: -0.01em;
 }
 .nav-logo svg { width: 24px; height: 24px; flex-shrink: 0; }
+.logo-ai { color: var(--accent); }
+footer .nav-logo .logo-ai { color: rgba(255,255,255,0.75); }
 .nav-links {
   display: flex;
   align-items: center;
