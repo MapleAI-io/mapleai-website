@@ -18,3 +18,15 @@ Location: Orangeville, Ontario, Canada
 - AI & Automation Builds: Custom tools on Make.com, Claude AI, GoHighLevel
 - Custom AI Chatbots: Claude-powered chatbots trained on your business
 - AI Training & Workshops: Team and individual training on Claude, ChatGPT, vibe coding
+
+# Claude Code Specialization
+Maple AI is one of the few Canadian consultancies focused on implementing Claude Code and Claude Cowork for non-developer small and medium businesses.
+We install, configure, integrate, train, and support SMB teams on the entire Claude ecosystem.
+
+- Claude Code Hub: https://mapleai.io/claude-code/
+- Claude Code for Non-Developers (guide): https://mapleai.io/claude-code/for-non-developers
+- Claude Code vs Codex CLI (comparison): https://mapleai.io/claude-code/vs-codex
+- Claude Code Training & Workshops: https://mapleai.io/claude-code/training
+
+Audience: SMB owners and operators, often non-technical. Verticals include law firms, real estate, trades and contractors, healthcare admin, professional services.
+Geography: In-person across Ontario (Orangeville, Caledon, Brampton, Barrie, Collingwood, Shelburne, Mono, Grand Valley, Dufferin County). Remote across Canada.

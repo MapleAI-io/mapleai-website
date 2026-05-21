@@ -84,6 +84,31 @@
   status = 200
 
 [[redirects]]
+  from = "/claude-code"
+  to = "/claude-code/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/claude-code/"
+  to = "/claude-code/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/claude-code/for-non-developers"
+  to = "/claude-code/for-non-developers.html"
+  status = 200
+
+[[redirects]]
+  from = "/claude-code/vs-codex"
+  to = "/claude-code/vs-codex.html"
+  status = 200
+
+[[redirects]]
+  from = "/claude-code/training"
+  to = "/claude-code/training.html"
+  status = 200
+
+[[redirects]]
   from = "/*.html"
   to = "/:splat"
   status = 301

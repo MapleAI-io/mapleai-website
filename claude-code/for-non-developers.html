@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code for Non-Developers | Maple AI</title>
+  <meta name="description" content="A plain-English guide to using Claude Code if you do not code. What it is, what you can actually do with it, and how to get started without learning the terminal. Built for SMB owners and operators.">
+  <link rel="canonical" href="https://mapleai.io/claude-code/for-non-developers">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mapleai.io/claude-code/for-non-developers">
+  <meta property="og:title" content="Claude Code for Non-Developers | Maple AI">
+  <meta property="og:description" content="How a non-technical small business owner can use Claude Code to automate real work. No terminal experience required.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude Code for Non-Developers",
+    "description": "A guide for non-technical small business owners on how to use Claude Code to do real work.",
+    "author": { "@type": "Organization", "name": "Maple AI" },
+    "publisher": { "@type": "Organization", "name": "Maple AI", "url": "https://mapleai.io" },
+    "mainEntityOfPage": "https://mapleai.io/claude-code/for-non-developers"
+  }
+  </script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .post-hero { padding: 160px 0 60px; background: var(--bg-2); border-bottom: 1px solid var(--border); }
+    .post-hero h1 { font-size: clamp(2rem, 4vw, 3rem); max-width: 760px; line-height: 1.18; }
+    .post-hero h1 em { color: var(--accent); font-style: italic; font-family: var(--font-d); }
+    .post-hero .lede { font-size: 1.12rem; max-width: 680px; margin-top: 18px; color: var(--text-2); line-height: 1.7; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-3); margin-bottom: 22px; }
+    .breadcrumb a { color: var(--text-3); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { color: var(--text-2); }
+
+    .post-body { padding: 70px 0 90px; }
+    .post-layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 64px; align-items: start; }
+    .post-content { max-width: 720px; }
+    .post-content h2 { font-size: clamp(1.55rem, 2.6vw, 2rem); margin: 48px 0 14px; }
+    .post-content h2:first-child { margin-top: 0; }
+    .post-content h3 { font-family: var(--font-d); font-size: 1.25rem; margin: 32px 0 10px; }
+    .post-content p { font-size: 1.04rem; line-height: 1.8; margin-bottom: 18px; color: var(--text); }
+    .post-content ul { margin: 0 0 22px 22px; }
+    .post-content ul li { font-size: 1.02rem; line-height: 1.8; margin-bottom: 8px; list-style: disc; color: var(--text); }
+    .post-content strong { color: var(--text); }
+    .callout { background: var(--accent-low); border-left: 3px solid var(--accent); padding: 22px 26px; border-radius: 0 var(--radius) var(--radius) 0; margin: 28px 0; }
+    .callout p { margin-bottom: 8px; font-size: 0.98rem; }
+    .callout p:last-child { margin-bottom: 0; }
+    .callout strong { color: var(--text); }
+
+    .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+    .compare-table th, .compare-table td { padding: 14px 18px; text-align: left; font-size: 0.95rem; border-bottom: 1px solid var(--border); }
+    .compare-table th { background: var(--accent-low); font-family: var(--font-d); font-size: 1rem; color: var(--text); }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    .ex-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin-bottom: 16px; }
+    .ex-card .tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .ex-card h4 { font-family: var(--font-d); font-size: 1.05rem; margin-bottom: 8px; }
+    .ex-card p { font-size: 0.96rem; line-height: 1.7; margin-bottom: 0; color: var(--text-2); }
+
+    .side-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: sticky; top: 100px; }
+    .side-cta h3 { font-family: var(--font-d); font-size: 1.2rem; margin-bottom: 10px; }
+    .side-cta p { font-size: 0.94rem; color: var(--text-2); margin-bottom: 18px; line-height: 1.65; }
+    .side-cta .tick { display: flex; gap: 8px; align-items: flex-start; font-size: 0.88rem; color: var(--text-2); margin-bottom: 8px; }
+    .side-cta .tick span:first-child { color: var(--accent); font-weight: 700; flex-shrink: 0; }
+    .side-cta hr { border: none; border-top: 1px solid var(--border); margin: 18px 0; }
+
+    .rel-strip { background: var(--bg-2); border-top: 1px solid var(--border); padding: 70px 0; }
+    .rel-strip h3 { font-family: var(--font-d); font-size: 1.6rem; margin-bottom: 22px; }
+    .rel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .rel-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; transition: all 0.2s var(--ease); }
+    .rel-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .rel-card h4 { font-family: var(--font-d); font-size: 1.05rem; margin-bottom: 8px; }
+    .rel-card p { font-size: 0.9rem; color: var(--text-2); margin-bottom: 12px; line-height: 1.6; }
+    .rel-card .arrow { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+    @media (max-width: 900px) {
+      .post-layout { grid-template-columns: 1fr; gap: 40px; }
+      .side-cta { position: static; }
+      .rel-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCV3WZ232D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JCV3WZ232D');
+  </script>
+</head>
+<body>
+<nav id="nav"><div class="container"><div class="nav-inner">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 24 24" fill="none" width="24" height="24" aria-hidden="true"><path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#1d6b3a"/></svg>
+    Maple <span class="logo-ai">AI</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/services">Services</a></li>
+    <li><a href="/claude-code/">Claude Code</a></li>
+    <li><a href="/how-it-works">How It Works</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="btn btn-primary btn-sm nav-cta">Book Free Audit</a>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</div></div></nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/services">Services</a>
+  <a href="/claude-code/">Claude Code</a>
+  <a href="/how-it-works">How It Works</a>
+  <a href="/about">About</a>
+  <a href="/#contact">Contact</a>
+  <a href="/#contact" class="btn btn-primary">Book Free Audit</a>
+</div>
+
+<section class="post-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="/">Home</a> / <a href="/claude-code/">Claude Code</a> / <span>For Non-Developers</span>
+    </div>
+    <span class="section-label">Plain English Guide</span>
+    <h1>Claude Code for non-developers. <em>Yes, you can actually use it.</em></h1>
+    <p class="lede">Almost every tutorial assumes you are a developer who lives in the terminal. You are not. You run a business. This guide is for you. We walk through what Claude Code is, what you can do with it without writing code, and the easiest way to get started.</p>
+  </div>
+</section>
+
+<section class="post-body">
+  <div class="container">
+    <div class="post-layout">
+      <article class="post-content">
+
+        <h2>The honest reality about Claude Code</h2>
+        <p>Claude Code was built by engineers for engineers. The docs use words like "agent," "tool use," "MCP server," and "subagent." If you opened the page hoping to find out whether you can use it for your roofing business or your real estate brokerage, you closed the tab.</p>
+        <p>Here is the truth nobody is saying clearly enough: <strong>most of what Claude Code does has nothing to do with writing software.</strong> It reads your files, talks to your tools, does multi-step work, and remembers what it has done. None of that requires code on your part.</p>
+
+        <div class="callout">
+          <p><strong>If you can describe what you want in plain English, Claude Code can probably do it.</strong> The hard part is the setup. That is what we do.</p>
+        </div>
+
+        <h2>What you actually need to know about how it works</h2>
+        <p>Three things, no more:</p>
+        <ul>
+          <li><strong>It lives on your computer.</strong> Not a website. You open it like you would open Word or Excel, and you talk to it.</li>
+          <li><strong>It can touch your files.</strong> If you point it at a folder of contracts or quotes or spreadsheets, it can read them, organize them, summarize them, or pull data out of them.</li>
+          <li><strong>It can do multi-step work without giving up.</strong> Tell it the goal once. It will work for an hour without asking you to click anything.</li>
+        </ul>
+
+        <h2>Claude Code or Claude Cowork: which one is for you?</h2>
+        <p>This is the most important decision and the one nobody explains well. Anthropic ships two products that use the same underlying engine. Pick the right one and the rest gets easy.</p>
+
+        <table class="compare-table">
+          <thead>
+            <tr><th></th><th>Claude Code</th><th>Claude Cowork</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>What it is</strong></td><td>Terminal-based AI agent</td><td>Desktop app, same engine</td></tr>
+            <tr><td><strong>Who it is for</strong></td><td>Developers, technical operators</td><td>Non-technical owners and teams</td></tr>
+            <tr><td><strong>How you use it</strong></td><td>Type commands</td><td>Point and click, drag and drop</td></tr>
+            <tr><td><strong>What it can do</strong></td><td>Almost everything</td><td>Almost everything Claude Code can</td></tr>
+            <tr><td><strong>Setup difficulty</strong></td><td>Higher</td><td>Lower</td></tr>
+            <tr><td><strong>Our recommendation for SMBs</strong></td><td>If you have one technical person</td><td>If your team is non-technical</td></tr>
+          </tbody>
+        </table>
+
+        <p>For most of our SMB clients we install <strong>Cowork</strong>. It looks and feels like a normal app, and your team can use it from day one. We use Claude Code on the back end to build the workflows behind the scenes.</p>
+
+        <h2>What can you actually do without coding?</h2>
+        <p>These are real things our clients are using Claude Code for right now. No code on their end.</p>
+
+        <div class="ex-card">
+          <div class="tag">Admin</div>
+          <h4>Turn a folder of PDFs into a spreadsheet</h4>
+          <p>50 contracts, 100 invoices, 200 building permits. Drop them in a folder. Get back a clean Excel file with every field you care about, in seconds per document.</p>
+        </div>
+        <div class="ex-card">
+          <div class="tag">Sales</div>
+          <h4>Write follow-ups for every stale lead in your CRM</h4>
+          <p>Export your CRM. Tell Claude Code which leads need a nudge and the angle to take. Get back personalized follow-up drafts in your voice. Paste them in, send them out.</p>
+        </div>
+        <div class="ex-card">
+          <div class="tag">Marketing</div>
+          <h4>Turn one piece of content into a week of social posts</h4>
+          <p>Your podcast episode becomes seven LinkedIn posts, three short videos, a newsletter, and a blog draft. Sized for each platform, written in your voice.</p>
+        </div>
+        <div class="ex-card">
+          <div class="tag">Ops</div>
+          <h4>Build a small tool that solves your specific problem</h4>
+          <p>A quoting calculator. A commission tracker. A weekly dashboard. The kind of tool that would cost $20,000 from a developer, but is exactly your shape. Claude Code builds these in a day.</p>
+        </div>
+        <div class="ex-card">
+          <div class="tag">Operations</div>
+          <h4>Month-end reporting that does itself</h4>
+          <p>Pull from your bookkeeping, your project tracker, and your bank exports. Get a clean monthly summary. The same first-of-the-month panic disappears.</p>
+        </div>
+        <div class="ex-card">
+          <div class="tag">Customer Service</div>
+          <h4>Draft replies to every email in your inbox</h4>
+          <p>It reads the inbox, drafts a response that sounds like you, and queues them in your drafts folder. You hit send. A 90-minute task becomes 10 minutes.</p>
+        </div>
+
+        <h2>The pricing reality, in plain numbers</h2>
+        <p>Anthropic's pricing tiers, in order:</p>
+        <ul>
+          <li><strong>Free.</strong> Tiny usage. Fine for trying it. Useless for real work.</li>
+          <li><strong>$20/month (Pro).</strong> Enough for a single user doing light daily work.</li>
+          <li><strong>$100/month (Max 5x).</strong> What most SMB owners actually need. Daily heavy use.</li>
+          <li><strong>$200/month (Max 20x).</strong> Power users, multi-hour daily sessions.</li>
+          <li><strong>API usage on top.</strong> Optional, for automation that runs unattended.</li>
+        </ul>
+        <p>The math on a $100/month plan: if Claude Code saves you four hours a week, you are paying about $6/hour for those hours back. Most clients see far more than that.</p>
+
+        <h2>The catch nobody mentions</h2>
+        <p>Here is what every Claude Code tutorial leaves out: <strong>the tool is powerful, but the value lives in the setup.</strong></p>
+        <p>Installing Claude Code is easy. Wiring it up to your CRM, your Drive, your Outlook, your bookkeeping, your industry-specific tools, and getting it to do reliable repeatable work, is where most people give up. Not because it is technically hard, but because they did not know it was possible.</p>
+        <p>That is the work we do. We are not selling you the tool. We are selling you a working setup that produces real output from day one.</p>
+
+        <div class="callout">
+          <p><strong>The truth:</strong> 90% of business owners who try Claude Code on their own get bored within a week. The ones who get value either had a technical friend walk them through it, or hired someone to set it up. There is no shame in the second option. That is what we are.</p>
+        </div>
+
+        <h2>How we get a non-technical business started on Claude Code</h2>
+        <p>This is the engagement, in plain steps:</p>
+        <ul>
+          <li><strong>Audit.</strong> Free 30-minute call. We figure out what you spend your time on, and where Claude Code will hit hardest.</li>
+          <li><strong>Install.</strong> We install Claude Code or Cowork on the right machines and pick the right plan for your real usage.</li>
+          <li><strong>Connect.</strong> We hook it into the tools you already use. CRM, email, Drive, accounting, whatever the stack is.</li>
+          <li><strong>Build.</strong> We create the prompts, scripts, and small custom tools that turn it into a system, not just a chat box.</li>
+          <li><strong>Train.</strong> Live training session for you and your team. Everyone leaves knowing how to use it for their real work.</li>
+          <li><strong>Support.</strong> 30 days of follow-up while it becomes part of your routine.</li>
+        </ul>
+
+        <h2>So, should you actually do this?</h2>
+        <p>If you are a small business owner who:</p>
+        <ul>
+          <li>Has a team that is drowning in repetitive admin</li>
+          <li>Has tried ChatGPT or Claude and wished it could just do the work</li>
+          <li>Is willing to spend a couple of weeks rewiring how some things get done</li>
+          <li>Wants to leverage AI before your competitors figure it out</li>
+        </ul>
+        <p>Then yes. The fact that you do not code is not a problem. Most of our clients do not. The question is whether you have something worth automating, and we can figure that out in 30 minutes.</p>
+
+        <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="/#contact" class="btn btn-primary">Book a Free Audit</a>
+          <a href="/claude-code/" class="btn btn-ghost">Back to Claude Code Overview</a>
+        </div>
+
+      </article>
+
+      <aside class="side-cta">
+        <h3>Try Claude Code with us</h3>
+        <p>30-minute free audit. We look at your workflow and tell you whether Claude Code is the right fit. No pitch, no commitment.</p>
+        <a href="/#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Book Free Audit</a>
+        <hr>
+        <div class="tick"><span>&#x2713;</span><span>Anthropic-aligned setup</span></div>
+        <div class="tick"><span>&#x2713;</span><span>Built for non-developers</span></div>
+        <div class="tick"><span>&#x2713;</span><span>Ontario-based, Canada-wide remote</span></div>
+        <div class="tick"><span>&#x2713;</span><span>Plain English, no jargon</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="rel-strip">
+  <div class="container">
+    <span class="section-label">Keep Reading</span>
+    <h3>More on Claude Code</h3>
+    <div class="rel-grid">
+      <a href="/claude-code/vs-codex" class="rel-card">
+        <h4>Claude Code vs Codex CLI</h4>
+        <p>Honest comparison between the two leading AI agents, with a clear recommendation for SMBs.</p>
+        <span class="arrow">Read &rarr;</span>
+      </a>
+      <a href="/claude-code/training" class="rel-card">
+        <h4>Claude Code Training &amp; Workshops</h4>
+        <p>Half-day and full-day sessions for your team. Hands-on, built around your real work.</p>
+        <span class="arrow">Read &rarr;</span>
+      </a>
+      <a href="/claude-code/" class="rel-card">
+        <h4>Claude Code Overview</h4>
+        <p>The hub page. Use cases, what we build, how engagements run, FAQ.</p>
+        <span class="arrow">Read &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:32px;">
+      <p>&copy; 2026 Maple AI. All rights reserved. Orangeville, Ontario.</p>
+      <div class="footer-legal"><a href="/">Home</a><a href="/#contact">Contact</a><a href="/sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
