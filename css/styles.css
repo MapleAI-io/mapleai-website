@@ -28,6 +28,33 @@
   --font:        'General Sans', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
   --max:         1120px;
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---- Legacy token aliases ----------------------------------------
+     Every inner page (/about, /services/*, /claude-code/*, the location
+     pages, /success) styles its own content in an inline <style> block
+     written against the pre-redesign token names. The homepage redesign
+     renamed all of them, which left those references undefined and the
+     pages rendering without colour, borders or type.
+
+     Mapping the old names onto the new palette fixes all of them and
+     pulls them onto the new colours and typeface at the same time.
+     Retire an alias once every page that used it has been migrated. */
+  --accent:      var(--green);
+  --accent-mid:  rgba(14, 122, 70, 0.12);
+  --accent-low:  var(--green-soft);
+  --accent-glow: rgba(14, 122, 70, 0.20);
+  --text:        var(--ink);
+  --text-2:      var(--body);
+  --text-3:      var(--muted);
+  --border:      var(--line);
+  --border-h:    var(--line-strong);
+  --bg-2:        var(--bg);
+  --bg-card:     var(--bg);
+  --bg-card-h:   var(--bg-soft);
+  --radius-lg:   var(--radius);
+  --font-d:      var(--font);
+  --font-b:      var(--font);
+  --ease:        var(--ease-out);
 }
 
 /* ── Reset ── */
@@ -762,3 +789,72 @@ footer { padding: 64px 0 36px; border-top: 1px solid var(--line); }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .faq-a-inner { padding-right: 0; }
 }
+
+
+/* ============================================================
+   Legacy inner-page classes
+   Used by pages that have not yet been migrated onto the new
+   design system. Restored from commit b510ab5 and re-pointed at
+   the current tokens. Delete a rule once no page references it.
+   ============================================================ */
+
+.logo-ai { color: var(--green); }
+footer .nav-logo .logo-ai { color: rgba(255, 255, 255, 0.75); }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.faq-item.open { border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+.faq-q {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+.faq-q:hover { background: var(--bg-soft); }
+.faq-icon {
+  flex: none;
+  width: 24px; height: 24px;
+  display: grid; place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: background 0.2s, border-color 0.2s;
+}
+.faq-icon svg { width: 12px; height: 12px; stroke: var(--body); transition: transform 0.2s, stroke 0.2s; }
+.faq-item.open .faq-icon { background: var(--green); border-color: var(--green); }
+.faq-item.open .faq-icon svg { stroke: #fff; transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s var(--ease-out); background: var(--bg-soft); }
+.faq-a p { padding: 0 20px 18px; font-size: 0.92rem; line-height: 1.7; color: var(--body); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.btn-outline:hover { border-color: var(--green); color: var(--green); }
