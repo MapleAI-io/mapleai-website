@@ -63,6 +63,40 @@
   to = "/privacy.html"
   status = 200
 
+# Legacy URLs from the previous site build. Google still has all six in
+# its index and reports them as 404s (first detected 2026-03-31), which
+# wastes crawl budget and strands anyone who follows an old link.
+# Pointed at the closest live equivalent so residual signal is kept.
+[[redirects]]
+  from = "/process-automation"
+  to = "/services/ai-automation-builds"
+  status = 301
+
+[[redirects]]
+  from = "/sales-automation"
+  to = "/services/ai-automation-builds"
+  status = 301
+
+[[redirects]]
+  from = "/marketing-automation"
+  to = "/services/ai-automation-builds"
+  status = 301
+
+[[redirects]]
+  from = "/business-intelligence"
+  to = "/services/automation-audit"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/services"
+  status = 301
+
+[[redirects]]
+  from = "/testimonials"
+  to = "/"
+  status = 301
+
 # Section index pages: without these, /services/index.html and
 # /claude-code/index.html hit the forced /*.html rule below and land
 # on /services/index and /claude-code/index, which have no rule.
