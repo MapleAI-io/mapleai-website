@@ -1,0 +1,15 @@
+# Internal working docs - never publish, the site root is the publish dir
+PRODUCT.md
+DESIGN.md
+Page Index Troubleshooting/
+
+# Agent / tooling scratch
+.claude/
+.codex/
+.impeccable/
+.netlify/
+
+# OS
+Thumbs.db
+desktop.ini
+.DS_Store
