@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
 
+# Note: /success is deliberately NOT disallowed here. It carries a
+# noindex meta tag, and Google has to be able to crawl the page to
+# see that tag. Blocking it would keep the page in the index.
+
 # Sitemaps
 Sitemap: https://mapleai.io/sitemap.xml
+
+# Structured summary for LLMs and AI search
+# https://mapleai.io/llms.txt

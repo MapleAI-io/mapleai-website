@@ -59,6 +59,24 @@
   status = 200
 
 [[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+# Section index pages: without these, /services/index.html and
+# /claude-code/index.html hit the forced /*.html rule below and land
+# on /services/index and /claude-code/index, which have no rule.
+[[redirects]]
+  from = "/services/index"
+  to = "/services/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/claude-code/index"
+  to = "/claude-code/index.html"
+  status = 200
+
+[[redirects]]
   from = "/how-it-works"
   to = "/how-it-works.html"
   status = 200

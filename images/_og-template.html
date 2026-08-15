@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<title>OG</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<style>
+  @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root {
+    --bg:#ffffff; --ink:#0f1a14; --body:#5a6470; --line:#e7eaee;
+    --green:#0e7a46; --green-soft:rgba(14,122,70,0.09);
+  }
+  html,body { width:1200px; height:630px; }
+  body {
+    font-family:'General Sans',-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink);
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:72px 76px; position:relative; overflow:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* soft green wash bottom-right */
+  body::after {
+    content:''; position:absolute; right:-160px; bottom:-220px;
+    width:640px; height:640px; border-radius:50%;
+    background:radial-gradient(circle at center, rgba(14,122,70,0.10), rgba(14,122,70,0) 68%);
+  }
+  .top { display:flex; align-items:center; gap:14px; position:relative; z-index:2; }
+  .top svg { width:44px; height:44px; }
+  .wordmark { font-size:33px; font-weight:700; letter-spacing:-0.02em; }
+  .mid { position:relative; z-index:2; max-width:930px; }
+  h1 {
+    font-size:74px; font-weight:700; letter-spacing:-0.035em;
+    line-height:1.03; text-wrap:balance;
+  }
+  h1 .g { color:var(--green); }
+  p.sub {
+    margin-top:26px; font-size:29px; line-height:1.42;
+    color:var(--body); max-width:820px; font-weight:400;
+  }
+  .bottom {
+    display:flex; align-items:center; justify-content:space-between;
+    position:relative; z-index:2; padding-top:26px;
+    border-top:1px solid var(--line);
+  }
+  .pills { display:flex; gap:10px; }
+  .pill {
+    font-size:20px; font-weight:600; color:var(--green);
+    background:var(--green-soft); padding:9px 18px; border-radius:100px;
+  }
+  .url { font-size:24px; font-weight:600; color:var(--ink); letter-spacing:-0.01em; }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#0e7a46"/>
+    </svg>
+    <span class="wordmark">Maple AI</span>
+  </div>
+
+  <div class="mid">
+    <h1>Done-for-you <span class="g">AI systems</span> for small business.</h1>
+    <p class="sub">Automation, chatbots and Claude Code. Built, run and maintained by the person you actually talk to.</p>
+  </div>
+
+  <div class="bottom">
+    <div class="pills">
+      <span class="pill">Claude Code</span>
+      <span class="pill">Automation</span>
+      <span class="pill">Chatbots</span>
+    </div>
+    <span class="url">mapleai.io</span>
+  </div>
+
+</body>
+</html>

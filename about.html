@@ -5,10 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Maple AI | Orangeville Ontario AI Consultant</title>
-  <meta name="description" content="Maple AI is Orangeville's local AI consultant. We're not an agency — we're a local operator who builds AI systems that actually get used by small businesses in Dufferin County.">
+  <meta name="description" content="Maple AI is Orangeville's local AI consultant. Not an agency, just one operator who builds AI systems that small businesses actually use.">
   <link rel="canonical" href="https://mapleai.io/about">
   <meta property="og:title" content="About Maple AI | Orangeville Ontario AI Consultant">
   <meta property="og:description" content="Local AI consulting from Orangeville, Ontario. We work with service businesses across Dufferin County — no agency rates, no junior hand-offs.">
+  <meta property="og:site_name" content="Maple AI">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:image" content="https://mapleai.io/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Maple AI - done-for-you AI systems for Canadian small business">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Maple AI | Orangeville Ontario AI Consultant">
+  <meta name="twitter:description" content="Local AI consulting from Orangeville, Ontario. We work with service businesses across Dufferin County — no agency rates, no junior hand-offs.">
+  <meta property="twitter:image" content="https://mapleai.io/images/og-image.png">
   <meta property="og:url" content="https://mapleai.io/about">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/styles.css">
@@ -40,16 +50,58 @@
     gtag('js', new Date());
     gtag('config', 'G-JCV3WZ232D');
   </script>
+
+  <!-- Schema: Person + AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mapleai.io/about#shawn",
+        "name": "Shawn Lowry",
+        "jobTitle": "Founder",
+        "url": "https://mapleai.io/about",
+        "email": "sales@mapleai.io",
+        "telephone": "+19059993465",
+        "worksFor": { "@id": "https://mapleai.io/#organization" },
+        "knowsAbout": [
+          "Claude Code",
+          "AI automation",
+          "Business process automation",
+          "AI chatbots",
+          "Sales operations",
+          "Make.com"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Orangeville",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "AboutPage",
+        "@id": "https://mapleai.io/about#page",
+        "url": "https://mapleai.io/about",
+        "name": "About Maple AI",
+        "mainEntity": { "@id": "https://mapleai.io/about#shawn" },
+        "isPartOf": { "@id": "https://mapleai.io/#website" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <nav id="nav">
   <div class="container"><div class="nav-inner">
     <a href="/" class="nav-logo">
-      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#0ef076"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" width="24" height="24"><path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#0e7a46"/></svg>
       Maple <span class="logo-ai">AI</span>
     </a>
     <ul class="nav-links">
       <li><a href="/services">Services</a></li>
+      <li><a href="/claude-code/">Claude Code</a></li>
       <li><a href="/how-it-works">How It Works</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/#contact">Contact</a></li>
@@ -158,7 +210,7 @@
 <footer><div class="container">
   <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:32px;">
     <p>&copy; 2026 Maple AI. All rights reserved. Orangeville, Ontario.</p>
-    <div class="footer-legal"><a href="/">Home</a><a href="/#contact">Contact</a></div>
+    <div class="footer-legal"><a href="/">Home</a><a href="/#contact">Contact</a><a href="/privacy">Privacy</a></div>
   </div>
 </div></footer>
 <script src="js/main.js"></script>

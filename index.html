@@ -3,47 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Consultant Orangeville Ontario | Maple AI</title>
-  <meta name="description" content="Maple AI builds done-for-you AI systems for Ontario businesses. Custom AI automation, chatbots, and workflows, built and maintained from Orangeville. Book a free audit.">
+  <title>AI Automation for Canadian Small Business | Maple AI</title>
+  <meta name="description" content="Maple AI builds done-for-you AI systems for Canadian small businesses. Custom automation, chatbots and Claude Code, built and run by one operator.">
   <link rel="canonical" href="https://mapleai.io/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mapleai.io/">
-  <meta property="og:title" content="AI Consultant Orangeville Ontario | Maple AI">
-  <meta property="og:description" content="Maple AI builds done-for-you AI systems for Ontario businesses. Custom AI automation, chatbots, and workflows, built and maintained from Orangeville. Book a free audit.">
+  <meta property="og:site_name" content="Maple AI">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:title" content="AI Automation for Canadian Small Business | Maple AI">
+  <meta property="og:description" content="Done-for-you AI systems for Canadian small businesses. Automation, chatbots and Claude Code, built and maintained by the person you actually talk to.">
   <meta property="og:image" content="https://mapleai.io/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Maple AI - done-for-you AI systems for Canadian small business">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Consultant Orangeville Ontario | Maple AI">
-  <meta name="twitter:description" content="Maple AI builds done-for-you AI systems for Ontario businesses. Custom AI automation, chatbots, and workflows, built and maintained from Orangeville.">
+  <meta name="twitter:title" content="AI Automation for Canadian Small Business | Maple AI">
+  <meta name="twitter:description" content="Done-for-you AI systems for Canadian small businesses. Automation, chatbots and Claude Code, built and maintained by the person you actually talk to.">
+  <meta property="twitter:image" content="https://mapleai.io/images/og-image.png">
 
   <!-- Favicon placeholder -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" href="favicon.svg">
 
-  <!-- Schema: LocalBusiness -->
+  <!-- Schema: Organization + WebSite + LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Maple AI",
-    "description": "AI consulting and automation for small businesses in Orangeville and Dufferin County. Custom AI builds, chatbots, automation audits, and training.",
-    "url": "https://mapleai.io",
-    "telephone": "+19059993465",
-    "email": "sales@mapleai.io",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Orangeville",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "areaServed": [
-      "Orangeville", "Caledon", "Shelburne", "Mono", "Grand Valley",
-      "Brampton", "Barrie", "Collingwood", "Dufferin County"
-    ],
-    "serviceType": ["AI Consulting", "Business Automation", "AI Chatbots", "AI Training"],
-    "priceRange": "$$",
-    "openingHours": "Mo-Fr 09:00-17:00"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mapleai.io/#organization",
+        "name": "Maple AI",
+        "alternateName": "Maple AI & Automation",
+        "url": "https://mapleai.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mapleai.io/images/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "image": "https://mapleai.io/images/og-image.png",
+        "email": "sales@mapleai.io",
+        "telephone": "+19059993465",
+        "description": "Done-for-you AI systems for Canadian small businesses. Automation, chatbots and Claude Code implementation.",
+        "founder": { "@id": "https://mapleai.io/about#shawn" },
+        "knowsAbout": [
+          "Claude Code",
+          "AI automation",
+          "AI chatbots",
+          "Make.com",
+          "Model Context Protocol",
+          "Business process automation",
+          "AI training for small business"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Orangeville",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mapleai.io/#website",
+        "url": "https://mapleai.io",
+        "name": "Maple AI",
+        "inLanguage": "en-CA",
+        "publisher": { "@id": "https://mapleai.io/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://mapleai.io/#localbusiness",
+        "name": "Maple AI",
+        "description": "AI consulting and automation for small businesses in Orangeville, Dufferin County and across Canada. Custom AI builds, chatbots, automation audits, Claude Code implementation and training.",
+        "url": "https://mapleai.io",
+        "telephone": "+19059993465",
+        "email": "sales@mapleai.io",
+        "parentOrganization": { "@id": "https://mapleai.io/#organization" },
+        "image": "https://mapleai.io/images/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Orangeville",
+          "addressRegion": "ON",
+          "postalCode": "L9W",
+          "addressCountry": "CA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.9195,
+          "longitude": -80.0942
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Ontario" },
+          { "@type": "Country", "name": "Canada" },
+          "Orangeville", "Caledon", "Shelburne", "Mono", "Grand Valley",
+          "Brampton", "Barrie", "Collingwood", "Dufferin County"
+        ],
+        "serviceType": ["AI Consulting", "Business Automation", "AI Chatbots", "AI Training", "Claude Code Implementation"],
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      }
+    ]
   }
   </script>
 
@@ -55,6 +122,56 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-JCV3WZ232D');
+  </script>
+
+  <!-- Schema: FAQPage (generated from visible FAQ content) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to be technical to work with you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We handle all the technical stuff. You just need to know your business. We'll figure out the rest and explain everything in plain language along the way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from hiring a Toronto agency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're local, available, and don't charge agency rates. You get a direct line to the person actually doing the work, not an account manager who relays messages to a team you'll never meet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kinds of businesses do you work with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trades, contractors, law firms, real estate, retail, healthcare admin, and any service business with repetitive manual processes. If your team is doing the same tasks over and over, we can probably automate a good chunk of it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does an AI build take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most projects are live within 2 to 4 weeks. The initial audit typically takes about a week. We move fast without cutting corners. You'll have something working before most agencies have finished the discovery call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every engagement starts with a free 30-minute audit. Builds are quoted after we understand your situation. No hourly billing surprises, no scope creep. You'll know exactly what you're getting and what it costs before we start."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>

@@ -1,0 +1,53 @@
+# Maple AI
+
+> Done-for-you AI systems for Canadian small businesses. Maple AI is a one-person consultancy in Orangeville, Ontario that builds, runs and maintains AI automation, chatbots and Claude Code implementations for owner-operated businesses. The person who scopes the work is the person who builds it.
+
+Maple AI is run by Shawn Lowry. Unusually for the category, the systems described here are in live production for paying clients, not demos: a 24/7 AI intake agent booking jobs into a tree service's field-service software, a customer intelligence platform scoring 12,373 records for an ID card distributor, and an AI phone agent handling roughly 100 calls a month for a family law practice.
+
+Contact: sales@mapleai.io · +1-905-999-3465 · Orangeville, Ontario, Canada
+Hours: Monday to Friday, 9:00 to 17:00 Eastern
+Service area: in person across Ontario, remote across Canada
+
+## Claude Code
+
+Maple AI is one of the few Canadian consultancies focused on implementing Claude Code and Claude Cowork for non-developer small and medium businesses. We install, configure, integrate, train and support.
+
+- [Claude Code for Small Business](https://mapleai.io/claude-code/): What Claude Code is, how a non-technical business actually uses it, and what implementation involves
+- [Claude Code for Non-Developers](https://mapleai.io/claude-code/for-non-developers): Plain-English guide covering what it is, what you can build, and how to start without the terminal
+- [Claude Code vs Codex CLI](https://mapleai.io/claude-code/vs-codex): Honest 2026 comparison on quality, speed and pricing, with a recommendation for SMBs
+- [Claude Code Training and Workshops](https://mapleai.io/claude-code/training): Half-day and full-day hands-on training built around a team's real work
+
+## Services
+
+- [Services overview](https://mapleai.io/services): The four ways Maple AI engages
+- [Business Automation Audit](https://mapleai.io/services/automation-audit): Operational review that maps where AI saves the most time and money. Free 30-minute starting point
+- [AI and Automation Builds](https://mapleai.io/services/ai-automation-builds): Custom tools on Make.com, Claude and GoHighLevel
+- [Custom AI Chatbots](https://mapleai.io/services/ai-chatbots): Claude-powered chatbots trained on your business that qualify leads and write into your CRM
+- [AI Training and Workshops](https://mapleai.io/services/ai-training-workshops): Team training on Claude, ChatGPT and practical automation
+
+## Company
+
+- [Home](https://mapleai.io/): Overview, client work and contact
+- [About](https://mapleai.io/about): Shawn Lowry, background and how Maple AI operates
+- [How It Works](https://mapleai.io/how-it-works): Strategy and Discovery, Implementation, Maintenance
+- [Privacy Policy](https://mapleai.io/privacy): How data is handled
+
+## Service areas
+
+- [Orangeville](https://mapleai.io/orangeville)
+- [Dufferin County](https://mapleai.io/dufferin-county)
+- [Caledon](https://mapleai.io/caledon)
+- [Shelburne](https://mapleai.io/shelburne)
+- [Mono](https://mapleai.io/mono)
+- [Grand Valley](https://mapleai.io/grand-valley)
+- [Brampton](https://mapleai.io/brampton)
+- [Barrie](https://mapleai.io/barrie)
+- [Collingwood](https://mapleai.io/collingwood)
+
+## Who this is for
+
+Owner-operated businesses, typically 2 to 50 employees, where the owner is still close to the work. Common verticals: trades and contractors, law firms, real estate, healthcare administration, distribution and professional services. Buyers are usually non-technical.
+
+## How engagements run
+
+Every engagement starts with a free 30-minute automation audit, with no commitment. Builds are quoted after discovery rather than billed hourly, so there are no hourly surprises and no scope creep. Standing practice on client systems is read-only access first, written approval before anything writes back, and no client data used for training.
