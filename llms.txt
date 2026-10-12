@@ -4,7 +4,7 @@
 
 Maple AI is run by Shawn Lowry. Unusually for the category, the systems described here are in live production for paying clients, not demos: a 24/7 AI intake agent booking jobs into a tree service's field-service software, a customer intelligence platform scoring 12,373 records for an ID card distributor, and an AI phone agent handling roughly 100 calls a month for a family law practice.
 
-Contact: sales@mapleai.io · +1-905-999-3465 · Orangeville, Ontario, Canada
+Contact: sales@mapleai.io · Orangeville, Ontario, Canada
 Hours: Monday to Friday, 9:00 to 17:00 Eastern
 Service area: in person across Ontario, remote across Canada
 
