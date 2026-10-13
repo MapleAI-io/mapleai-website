@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimate Requests for Tree Service Companies | Maple AI</title>
+  <meta name="description" content="A website assistant for Ontario tree service companies. It collects the job details from every inquiry, day or night, and drops a clean estimate request into your job software. You price it.">
+  <link rel="canonical" href="https://mapleai.io/tree-service">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mapleai.io/tree-service">
+  <meta property="og:site_name" content="Maple AI">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:title" content="Estimate Requests for Tree Service Companies | Maple AI">
+  <meta property="og:description" content="Every inquiry becomes a clean estimate request in your job software, even the ones that come in at 11pm. Built for Ontario tree service owners.">
+  <meta property="og:image" content="https://mapleai.io/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estimate Requests for Tree Service Companies | Maple AI">
+  <meta name="twitter:description" content="Every inquiry becomes a clean estimate request in your job software, even the ones that come in at 11pm. Built for Ontario tree service owners.">
+  <meta property="twitter:image" content="https://mapleai.io/images/og-image.png">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://mapleai.io/tree-service#service",
+        "name": "Inquiry-to-estimate system for tree service companies",
+        "serviceType": "AI website assistant and job software integration",
+        "provider": { "@id": "https://mapleai.io/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "Ontario" },
+        "audience": { "@type": "BusinessAudience", "name": "Tree service companies" },
+        "description": "A website assistant that collects job details from every inquiry and creates a clean estimate request in the company's job software. Setup, integration, monitoring and a monthly results review are managed by Maple AI. The owner assesses, prices and closes the work."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does the assistant give the homeowner a price?", "acceptedAnswer": { "@type": "Answer", "text": "No. It collects the details you need to price the job and tells the homeowner you will follow up with an estimate. Pricing stays with you." } },
+          { "@type": "Question", "name": "Which job software does it work with?", "acceptedAnswer": { "@type": "Answer", "text": "Jobber first, because that is what we have built on. Other platforms are possible and we confirm fit on the walkthrough call." } },
+          { "@type": "Question", "name": "I already use Jobber. Can I just turn this on?", "acceptedAnswer": { "@type": "Answer", "text": "Some of it, yes. Jobber has built-in request forms and quote follow-ups. If a setting you already pay for solves your problem, we will tell you that on the call and you will not need us." } },
+          { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "A setup fee, then a monthly fee for running it. We quote after the walkthrough once we know your inquiry volume and software. No hourly billing." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Page-specific styling. Everything else comes from the homepage system. */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-soft); color: var(--green);
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 22px;
+    }
+    #hero h1 em { font-style: normal; color: var(--green); }
+
+    /* Hero demo: an inquiry card feeding a request card */
+    .flow { display: grid; gap: 16px; }
+    .flow-card {
+      background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: var(--shadow-md); padding: 18px 20px;
+    }
+    .flow-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .flow-head strong { font-size: 0.92rem; font-weight: 600; }
+    .flow-chip { font-size: 0.72rem; font-weight: 700; color: var(--green); background: var(--green-soft); padding: 3px 9px; border-radius: 100px; }
+    .flow-msg { font-size: 0.9rem; line-height: 1.5; padding: 9px 12px; border-radius: 12px; max-width: 86%; margin-bottom: 8px; }
+    .flow-msg.user { background: var(--bg-soft); border: 1px solid var(--line); }
+    .flow-msg.bot { background: var(--green); color: #fff; margin-left: auto; }
+    .flow-arrow { display: flex; justify-content: center; color: var(--muted); }
+    .flow-arrow svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+    .req { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 0.88rem; }
+    .req span:nth-child(odd) { color: var(--muted); }
+    .req span:nth-child(even) { font-weight: 500; }
+
+    /* Scope cards */
+    .scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .scope-grid > * { min-width: 0; }
+    .scope {
+      background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px;
+    }
+    .scope h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .scope ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+    .scope li { font-size: 0.95rem; color: var(--body); line-height: 1.5; padding-left: 24px; position: relative; }
+    .scope li::before { content: ""; position: absolute; left: 0; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+    .scope.out li::before { background: var(--line-strong); }
+    .scope.you li::before { background: var(--ink); }
+
+    /* Fit lists */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .fit-grid > * { min-width: 0; }
+    .fit { padding: 28px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg); }
+    .fit h3 { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .fit p { font-size: 0.96rem; color: var(--body); line-height: 1.6; margin-bottom: 10px; }
+    .fit p:last-child { margin-bottom: 0; }
+    .honest { margin-top: 24px; padding: 20px 24px; border-left: 3px solid var(--green); background: var(--bg-soft); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 0.98rem; color: var(--body); line-height: 1.6; }
+    .honest b { color: var(--ink); font-weight: 600; }
+
+    /* Measures */
+    .measures { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .measures > * { min-width: 0; }
+    .measure { border-top: 2px solid var(--green); padding-top: 16px; }
+    .measure b { display: block; font-size: 1.05rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .measure span { font-size: 0.92rem; color: var(--body); line-height: 1.55; }
+
+    #problem, #scope, #measure { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .form-note { font-size: 0.88rem; color: var(--muted); margin-top: 14px; }
+
+    @media (max-width: 900px) {
+      .scope-grid, .measures { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .scope-grid, .measures, .fit-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCV3WZ232D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JCV3WZ232D');
+  </script>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#0e7a46"/>
+        </svg>
+        Maple AI
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#scope">What's included</a></li>
+        <li><a href="#fit">Is it a fit</a></li>
+        <li><a href="#faq">Questions</a></li>
+      </ul>
+      <a href="#walkthrough" class="btn btn-primary btn-sm nav-cta">Request a walkthrough</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#how">How it works</a>
+  <a href="#scope">What's included</a>
+  <a href="#fit">Is it a fit</a>
+  <a href="#faq">Questions</a>
+  <a href="#walkthrough" class="btn btn-primary">Request a walkthrough</a>
+</div>
+
+<!-- ── Hero ── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="eyebrow">For tree service companies in Ontario</div>
+        <h1>Every inquiry becomes an estimate request. <em>Even at 11pm.</em></h1>
+        <p class="hero-sub">You're up a tree. The phone rings. The website form sits until evening. By then the homeowner has called the next company. Maple AI sets up a website assistant that collects the job details the moment someone asks, then drops a clean estimate request into your job software. You price it when you're back on the ground.</p>
+        <div class="hero-ctas">
+          <a href="#walkthrough" class="btn btn-primary">
+            Request a 15-minute walkthrough
+            <svg viewBox="0 0 16 16" fill="none" width="14" height="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#how" class="btn btn-ghost">See how it works</a>
+        </div>
+        <div class="hero-trust"><span><b>15-minute walkthrough</b></span> &nbsp;·&nbsp; <span>No commitment</span> &nbsp;·&nbsp; <span>Based in Orangeville, working across Ontario</span></div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="flow" aria-hidden="true">
+          <div class="flow-card">
+            <div class="flow-head"><strong>Your website, 11:04 PM</strong><span class="flow-chip">Assistant</span></div>
+            <div class="flow-msg user">Hi, I need a big maple taken down in my backyard. Can you give me a quote?</div>
+            <div class="flow-msg bot">Happy to get that set up. What's the address, and is there a gate or fence we'd need to get equipment through?</div>
+            <div class="flow-msg user">12 Example Lane, Orangeville. There's a 4 foot gate on the side.</div>
+            <div class="flow-msg bot">Got it. Can you send a photo of the tree? Then the crew will look it over and send you an estimate.</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+          <div class="flow-card">
+            <div class="flow-head"><strong>New request in your job software</strong><span class="flow-chip">7:02 AM</span></div>
+            <div class="req">
+              <span>Service</span><span>Tree removal, large maple</span>
+              <span>Location</span><span>Orangeville, backyard</span>
+              <span>Access</span><span>4 ft side gate</span>
+              <span>Photos</span><span>1 attached</span>
+              <span>Next step</span><span>Owner to assess and price</span>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption">Demo view of the inquiry flow. Demonstration data, not a real customer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Problem ── -->
+<section id="problem">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>The inquiries you already pay for are the ones getting missed</h2>
+      <p>Google, your website, word of mouth. The leads show up. The problem is what happens in the hours between the homeowner asking and you being free to answer. This system closes that gap. It doesn't find you more leads, it makes sure the ones you have turn into estimate requests you can act on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section id="how">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>How it works</h2>
+      <p>Three steps. The system handles the first two. The third one stays with you, on purpose.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h3>The homeowner describes the job</h3>
+        <p>An assistant on your website asks the questions you'd ask: what kind of work, where, how big, how's the access, any photos. It answers right away, at any hour, and never guesses a price.</p>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h3>A clean request lands in your job software</h3>
+        <p>Everything goes into the right fields in Jobber or whatever you run the business on. No retyping from voicemails or emails. If something goes wrong, we're watching and we fix it.</p>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h3>You assess, price and close</h3>
+        <p>You look at the job, confirm you have room for it, send the estimate and win the work the way you always have. The system just makes sure you're never the last one to call back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Scope ── -->
+<section id="scope">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>What's included, and what isn't</h2>
+      <p>A tight package you can understand in one read. We'd rather tell you the edges up front than surprise you later.</p>
+    </div>
+    <div class="scope-grid">
+      <div class="scope reveal reveal-delay-1">
+        <h3>What Maple AI manages</h3>
+        <ul>
+          <li>Setting up the assistant with your services, service area and the questions you need answered</li>
+          <li>Installing it on your website</li>
+          <li>Connecting it to your job software so requests land in the right place</li>
+          <li>Monitoring and error handling, so a broken request never sits unseen</li>
+          <li>A monthly results review with you</li>
+        </ul>
+      </div>
+      <div class="scope you reveal reveal-delay-2">
+        <h3>What stays with you</h3>
+        <ul>
+          <li>Looking at the job and deciding if you want it</li>
+          <li>Confirming availability</li>
+          <li>Pricing and sending the estimate</li>
+          <li>Closing the work and doing it well</li>
+        </ul>
+      </div>
+      <div class="scope out reveal reveal-delay-3">
+        <h3>Not included to start</h3>
+        <ul>
+          <li>Rebuilding your CRM or job software</li>
+          <li>Answering your phone line</li>
+          <li>Other departments, like invoicing or crew scheduling</li>
+          <li>Unlimited custom changes. Changes are scoped and agreed, not open-ended</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Fit ── -->
+<section id="fit">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Is this a fit?</h2>
+      <p>It's not for everyone. Here's how to tell before you book a call.</p>
+    </div>
+    <div class="fit-grid">
+      <div class="fit reveal reveal-delay-1">
+        <h3>Probably yes</h3>
+        <p>You already get a steady flow of inquiries from your website and Google.</p>
+        <p>Some of them get answered late, or not at all, because you're on a job.</p>
+        <p>You have room on the calendar for more work and you want the leads you already have to turn into estimates.</p>
+      </div>
+      <div class="fit reveal reveal-delay-2">
+        <h3>Probably not</h3>
+        <p>You get a handful of inquiries a month. There isn't enough volume for this to pay for itself, and we'll say so.</p>
+        <p>You already answer every inquiry within the hour. You don't have the problem this fixes.</p>
+        <p>You want someone to answer the phone. That's a different system.</p>
+      </div>
+    </div>
+    <div class="honest reveal">
+      <b>Already on Jobber?</b> Some of this is a setting you can switch on. Jobber has built-in request forms and quote follow-ups. If turning on something you already pay for solves your problem, we'll tell you that on the walkthrough and you won't need us.
+    </div>
+  </div>
+</section>
+
+<!-- ── Measure ── -->
+<section id="measure">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>What we'd measure together</h2>
+      <p>We don't promise a number before we've seen your business. We agree on a baseline, then look at these four every month.</p>
+    </div>
+    <div class="measures">
+      <div class="measure reveal reveal-delay-1"><b>Response time</b><span>How long a homeowner waits before someone, or something, answers.</span></div>
+      <div class="measure reveal reveal-delay-2"><b>Qualified requests</b><span>Inquiries that arrive with enough detail to price.</span></div>
+      <div class="measure reveal reveal-delay-3"><b>Booked estimates</b><span>Requests that turn into a site visit or a quote sent.</span></div>
+      <div class="measure reveal reveal-delay-3"><b>Jobs won</b><span>The number that matters. Tracked in your job software, not in a slide.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div class="faq-intro reveal">
+        <h2>Questions</h2>
+        <p>Straight answers. No sales fluff.</p>
+      </div>
+      <div class="faq-list reveal reveal-delay-1">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Does the assistant give the homeowner a price?<span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">No. It collects the details you need to price the job and tells the homeowner you'll follow up with an estimate. Pricing stays with you.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Which job software does it work with?<span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Jobber first, because that's what we've built on. Other platforms are possible and we confirm fit on the walkthrough call before anyone commits to anything.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Has this been built before, or am I the test?<span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">It's running today for a tree service company that takes website inquiries around the clock. This page is us offering the same bounded system to Ontario companies. We're deliberately keeping the first group small so every setup gets proper attention.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I need to be technical?<span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">No. You need to know your business and your job software. We handle the rest and explain it in plain language. You deal directly with the person doing the work.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What does it cost?<span class="faq-icon"><svg viewBox="0 0 12 12"><path d="M6 1v10M1 6h10"/></svg></span></button>
+          <div class="faq-a"><div class="faq-a-inner">A setup fee, then a monthly fee for running it. We quote after the walkthrough once we know your inquiry volume and software. No hourly billing, no scope creep.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Walkthrough request ── -->
+<section id="walkthrough">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h2>Request a 15-minute walkthrough</h2>
+        <p>Tell us a bit about your business. Shawn replies within one business day with a couple of times. On the call you'll see an inquiry become an estimate request, start to finish, and we'll tell you honestly whether it fits.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <a href="mailto:sales@mapleai.io">sales@mapleai.io</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span>Orangeville, ON</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <form id="walkthrough-form" name="tree-service" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="tree-service">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="form-group full">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your tree service" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiries">Inquiries per month, roughly</label>
+              <select id="inquiries" name="inquiries" required>
+                <option value="" disabled selected>Pick one</option>
+                <option value="Fewer than 10">Fewer than 10</option>
+                <option value="10 to 25">10 to 25</option>
+                <option value="25 to 50">25 to 50</option>
+                <option value="More than 50">More than 50</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="software">Job software today</label>
+              <select id="software" name="software" required>
+                <option value="" disabled selected>Pick one</option>
+                <option value="Jobber">Jobber</option>
+                <option value="Housecall Pro">Housecall Pro</option>
+                <option value="ServiceTitan">ServiceTitan</option>
+                <option value="Spreadsheet or paper">Spreadsheet or paper</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            Request the walkthrough
+            <svg viewBox="0 0 16 16" fill="none" width="14" height="14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2L2 8l4 2 2 4 6-12z"/></svg>
+          </button>
+          <p class="form-note">No phone number needed. We'll reply by email.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="21" height="21" aria-hidden="true">
+            <path d="M12 2C12 2 10.5 5 8 6C8 6 10 6.5 10 8C10 8 7 7 5 9C5 9 7.5 9.5 7 11C7 11 4 10 3 13C3 13 6 12.5 6 14.5C6 14.5 4 15 4.5 17C4.5 17 7 15.5 8 16.5L10.5 22H11V18H13V22H13.5L16 16.5C17 15.5 19.5 17 19.5 17C20 15 18 14.5 18 14.5C18 12.5 21 13 21 13C20 10 17 11 17 11C16.5 9.5 19 9 19 9C17 7 14 8 14 8C14 6.5 16 6 16 6C13.5 5 12 2 12 2Z" fill="#0e7a46"/>
+          </svg>
+          Maple AI
+        </a>
+        <p>Done-for-you AI systems, built and maintained from Orangeville, Ontario. Serving Dufferin County and businesses across the province.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/tree-service">Tree service estimate requests</a></li>
+          <li><a href="/services/ai-chatbots">Custom AI Chatbots</a></li>
+          <li><a href="/services/ai-automation-builds">AI &amp; Automation Builds</a></li>
+          <li><a href="/services">All services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="#walkthrough">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Maple AI. All rights reserved. Orangeville, Ontario.</p>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
